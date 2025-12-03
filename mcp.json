@@ -1,0 +1,8 @@
+{
+    "servers": {
+        "hero-ui": {
+            "url": "https://localhost:3000/mcp",
+            "headers": {}
+        }
+    }
+}

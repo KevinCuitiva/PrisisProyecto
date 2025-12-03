@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import { useAuth } from './context/AuthContext'
+import Login from './components/Login'
+import MercadoMercurio from './pages/mercadoMercurio'
+import Mercados from './pages/mercados'
+import Distribuidores from './pages/distribuidores'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { isAuthenticated, loading, user } = useAuth();
+  const [currentPage, setCurrentPage] = useState('mercadoMercurio');
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+  // Redirigir al dashboard del usuario cuando se loguea
+  useEffect(() => {
+    if (isAuthenticated && user?.dashboard) {
+      setCurrentPage(user.dashboard);
+    }
+  }, [isAuthenticated, user]);
+
+  if (loading) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh',
+        fontSize: '1.2rem',
+        color: '#667eea'
+      }}>
+        Cargando...
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
+  }
+
+  if (!isAuthenticated) {
+    return <Login onLoginSuccess={(dashboard) => setCurrentPage(dashboard)} />;
+  }
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'mercadoMercurio':
+        return <MercadoMercurio />;
+      case 'mercados':
+        return <Mercados />;
+      case 'distribuidores':
+        return <Distribuidores />;
+      default:
+        return <MercadoMercurio />;
+    }
+  };
+
+  return renderPage();
 }
 
 export default App
