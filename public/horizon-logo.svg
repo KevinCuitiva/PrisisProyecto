@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <!-- Globo con red -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066CC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9966CC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base curva -->
+  <path d="M 100 400 Q 300 450 500 400" fill="url(#gradient1)" opacity="0.8"/>
+  
+  <!-- Globo -->
+  <circle cx="300" cy="250" r="120" fill="none" stroke="#0066CC" stroke-width="2"/>
+  
+  <!-- Líneas de red -->
+  <path d="M 300 130 Q 350 180 380 250" stroke="#0066CC" stroke-width="1.5" fill="none"/>
+  <path d="M 300 130 Q 250 180 220 250" stroke="#0066CC" stroke-width="1.5" fill="none"/>
+  <path d="M 380 250 Q 350 300 300 370" stroke="#0066CC" stroke-width="1.5" fill="none"/>
+  <path d="M 220 250 Q 250 300 300 370" stroke="#0066CC" stroke-width="1.5" fill="none"/>
+  
+  <!-- Iconos -->
+  <g>
+    <!-- Carrito de compras -->
+    <circle cx="240" cy="200" r="20" fill="#0066CC"/>
+    <path d="M 235 195 h 10 l 2 8 h -14 z M 237 205 v 2 M 247 205 v 2" stroke="white" stroke-width="1.5" fill="none"/>
+    
+    <!-- Casa -->
+    <circle cx="300" cy="280" r="20" fill="#0066CC"/>
+    <path d="M 290 275 l 10 -8 l 10 8 v 12 h -20 z" fill="white"/>
+    
+    <!-- Otro carrito -->
+    <circle cx="360" cy="200" r="20" fill="#0066CC"/>
+    <path d="M 355 195 h 10 l 2 8 h -14 z M 357 205 v 2 M 367 205 v 2" stroke="white" stroke-width="1.5" fill="none"/>
+    
+    <!-- Mano -->
+    <circle cx="380" cy="310" r="20" fill="#9966CC"/>
+    <path d="M 375 310 q 0 -5 5 -5 q 5 0 5 5 l -2 8 q -1 3 -3 3 q -2 0 -3 -3 z" fill="white"/>
+  </g>
+  
+  <!-- Puntos de conexión -->
+  <circle cx="300" cy="130" r="5" fill="#0066CC"/>
+  <circle cx="380" cy="250" r="5" fill="#0066CC"/>
+  <circle cx="220" cy="250" r="5" fill="#0066CC"/>
+  <circle cx="300" cy="370" r="5" fill="#0066CC"/>
+  <circle cx="340" cy="160" r="5" fill="#0066CC"/>
+  <circle cx="260" cy="160" r="5" fill="#0066CC"/>
+</svg>

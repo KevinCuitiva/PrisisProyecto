@@ -40,12 +40,9 @@ const Login = ({ onLoginSuccess }) => {
     <div className="login-container">
       <div className="login-box">
         <div className="logo-container">
-          <div className="logo-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-            </svg>
-          </div>
-          <h2 className="brand-name">SupplyStation</h2>
+          <img src="/horizon-logo.svg" alt="Horizon Solutions" className="horizon-logo" />
+          <h2 className="brand-name">Horizon Solutions</h2>
+          <p className="brand-tagline">Red Colaborativa LATAM</p>
         </div>
         
         <h1 className="login-title">Iniciar Sesión</h1>
